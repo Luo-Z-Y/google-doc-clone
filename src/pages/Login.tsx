@@ -12,6 +12,6 @@ export default function Login() {
 
   return <div>
     <p>Sign In With Google To Continue</p>
-    <button onClick={signInWithGoogle}>Sign In With Google</button>
+    <button onClick={signInWithGoogle}>Sign In</button>
   </div>;
 }

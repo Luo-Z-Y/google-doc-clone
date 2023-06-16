@@ -5,7 +5,7 @@ import { signOut } from "firebase/auth";
 import "../App.css";
 import { useNavigate } from "react-router-dom";
 
-export default function Navbar() {
+export default function Sidebar() {
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
 
@@ -15,19 +15,11 @@ export default function Navbar() {
   }
 
   return (
-    <div className="navbar">
-      <div className="links">
-        <Link to="/"> Home </Link>
-        {user ? (
-          <Link to="/Editor"> Editor </Link>
-        ) : (
-          <Link to="/Login"> Login </Link>
-        )}
-      </div>
+    <div className="sidebar">
       <div className="user">
         {user && (
           <>
-            <p>{auth.currentUser?.displayName}</p>
+            <p>Hello! {auth.currentUser?.displayName}</p>
             <img src={user?.photoURL || ""} alt=""/>
             <button onClick={signUserOut}>Log Out</button>
           </>
